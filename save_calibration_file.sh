@@ -65,7 +65,7 @@ ros2 launch tf_tree_to_yaml tf_tree_to_yaml.launch.py \
 
 
 if [ $? -eq 0 ]; then
-  log_info "成功输出：$SCRIPT_DIR/output_yaml_file"
+  log_info "成功输出：$SCRIPT_DIR/$output_yaml_file"
 else
   log_error "执行出错 执行出错 执行出错"
 fi
