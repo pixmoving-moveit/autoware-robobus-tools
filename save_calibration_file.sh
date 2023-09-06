@@ -22,6 +22,7 @@ cat<<EOF
 a: robobus sensor_top 到 os_lidar_fl os_lidar_fr os_lidar_rl os_lidar_rr
 b: robobus os_lidar_ancillary 到 cemera_top
 c: robobus os_lidar_ancillary 到 cemera_front
+d: robobus sensor_top 到 os_lidar_ancillary
 EOF
 
 read -p "请输入标定序号(a-c): " choice
@@ -42,6 +43,12 @@ case "$choice" in
         parent_frame='os_lidar_ancillary'
         child_frame='[cemera_front]'
         output_yaml_file='os_lidar_ancillary2cemera_front.yaml'
+    ;;
+
+    d)
+        parent_frame='sensor_top'
+        child_frame='[os_lidar_ancillary]'
+        output_yaml_file='sensor_top2os_lidar_ancillary.yaml'
     ;;
 
     *)
