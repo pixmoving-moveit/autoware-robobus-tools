@@ -30,7 +30,7 @@ case "$choice" in
     a)
         parent_frame='sensor_top'
         child_frame='[os_lidar_fl,os_lidar_fr,os_lidar_rl,os_lidar_rr]'
-        output_yaml_file='sensor_top2lidar*4.yaml'
+        output_yaml_file='sensor_top2lidar-4.yaml'
     ;;
 
     b)
