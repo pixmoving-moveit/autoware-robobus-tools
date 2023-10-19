@@ -20,8 +20,8 @@ output_yaml_file='sensors_calibration.yaml'
 
 cat<<EOF
 a: robobus sensor_top 到 os_lidar_fl os_lidar_fr os_lidar_rl os_lidar_rr
-b: robobus os_lidar_ancillary 到 cemera_top
-c: robobus os_lidar_ancillary 到 cemera_front
+b: robobus os_lidar_ancillary 到 camera_top
+c: robobus os_lidar_ancillary 到 camera_front
 d: robobus sensor_top 到 os_lidar_ancillary
 EOF
 
@@ -35,14 +35,14 @@ case "$choice" in
 
     b)
         parent_frame='os_lidar_ancillary'
-        child_frame='[cemera_top]'
-        output_yaml_file='os_lidar_ancillary2cemera_top.yaml'
+        child_frame='[camera_top]'
+        output_yaml_file='os_lidar_ancillary2camera_top.yaml'
     ;;
 
     c)
         parent_frame='os_lidar_ancillary'
-        child_frame='[cemera_front]'
-        output_yaml_file='os_lidar_ancillary2cemera_front.yaml'
+        child_frame='[camera_front]'
+        output_yaml_file='os_lidar_ancillary2camera_front.yaml'
     ;;
 
     d)
