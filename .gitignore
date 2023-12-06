@@ -1,3 +1,4 @@
 *.pcd
 *.yaml
 pcd_metadata_param.yaml
+*-metadata.json

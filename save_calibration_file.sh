@@ -34,15 +34,15 @@ case "$choice" in
     ;;
 
     b)
-        parent_frame='os_lidar_ancillary'
+        parent_frame='sensor_top'
         child_frame='[camera_top]'
-        output_yaml_file='os_lidar_ancillary2camera_top.yaml'
+        output_yaml_file='sensor_top2camera_top.yaml'
     ;;
 
     c)
-        parent_frame='os_lidar_ancillary'
+        parent_frame='sensor_top'
         child_frame='[camera_front]'
-        output_yaml_file='os_lidar_ancillary2camera_front.yaml'
+        output_yaml_file='sensor_top2camera_front.yaml'
     ;;
 
     d)
