@@ -84,40 +84,6 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Alpha: 1
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz_default_plugins/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 0
-      Enabled: false
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 255
-      Min Color: 0; 0; 0
-      Min Intensity: 1
-      Name: rs16
-      Position Transformer: XYZ
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.15000000596046448
-      Style: Flat Squares
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Best Effort
-        Value: /sensing/lidar/rslidar_sdk/rs/points
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: false
-    - Alpha: 1
       Autocompute Intensity Bounds: false
       Autocompute Value Bounds:
         Max Value: 10
@@ -129,7 +95,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 1024
@@ -150,7 +116,7 @@ Visualization Manager:
         Value: /sensing/lidar/front_left/ouster/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -163,12 +129,12 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 6115
+      Max Intensity: 5413
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 3
       Name: fr
       Position Transformer: XYZ
       Selectable: true
@@ -184,7 +150,7 @@ Visualization Manager:
         Value: /sensing/lidar/front_right/ouster/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -197,12 +163,12 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 6530
+      Max Intensity: 5736
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 3
       Name: rl
       Position Transformer: XYZ
       Selectable: true
@@ -218,7 +184,7 @@ Visualization Manager:
         Value: /sensing/lidar/rear_left/ouster/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: false
       Autocompute Value Bounds:
@@ -231,7 +197,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 0
-      Enabled: false
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 1014
@@ -252,7 +218,7 @@ Visualization Manager:
         Value: /sensing/lidar/rear_right/ouster/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: false
       Autocompute Value Bounds:
@@ -284,40 +250,6 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Best Effort
         Value: /sensing/lidar/concatenated/pointcloud_unfilter
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: false
-    - Alpha: 1
-      Autocompute Intensity Bounds: false
-      Autocompute Value Bounds:
-        Max Value: 10
-        Min Value: -10
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz_default_plugins/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: Intensity
-      Decay Time: 0
-      Enabled: false
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Max Intensity: 1024
-      Min Color: 0; 0; 0
-      Min Intensity: 4
-      Name: ancillary
-      Position Transformer: XYZ
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.029999999329447746
-      Style: Flat Squares
-      Topic:
-        Depth: 5
-        Durability Policy: Volatile
-        Filter size: 10
-        History Policy: Keep Last
-        Reliability Policy: Best Effort
-        Value: /sensing/lidar/ancillary/ouster/points
       Use Fixed Frame: true
       Use rainbow: true
       Value: false
@@ -388,7 +320,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/XYOrbit
-      Distance: 92.5950927734375
+      Distance: 100
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -403,10 +335,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.4897978603839874
+      Pitch: 1.3447965383529663
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz_default_plugins)
-      Yaw: 0.2091676890850067
+      Yaw: 0.10420531034469604
     Saved: ~
 Window Geometry:
   Displays:
