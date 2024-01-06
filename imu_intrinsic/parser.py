@@ -43,10 +43,12 @@ class ParserYaml:
 
     def revise_camera_intrinsic(self):
         self.param_yaml={}
-        self.param_yaml["imuGyrNoise"] = self.imu_cail_yaml["Gyr"]["avg-axis"]["gyr_n"]
-        self.param_yaml["imuGyrBiasN"] = self.imu_cail_yaml["Gyr"]["avg-axis"]["gyr_w"]
-        self.param_yaml["imuAccNoise"] = self.imu_cail_yaml["Acc"]["avg-axis"]["acc_n"]
-        self.param_yaml["imuAccBiasN"] = self.imu_cail_yaml["Acc"]["avg-axis"]["acc_w"]
+        self.param_yaml["/**"]["ros__parameters"]["angular_velocity_stddev_xx"] = self.imu_cail_yaml["Gyr"]["x-axis"]["gyr_n"]
+        self.param_yaml["/**"]["ros__parameters"]["angular_velocity_stddev_yy"] = self.imu_cail_yaml["Gyr"]["y-axis"]["gyr_n"]
+        self.param_yaml["/**"]["ros__parameters"]["angular_velocity_stddev_zz"] = self.imu_cail_yaml["Gyr"]["z-axis"]["gyr_n"]
+        self.param_yaml["/**"]["ros__parameters"]["angular_velocity_offset_x"] = self.imu_cail_yaml["Gyr"]["x-axis"]["gyr_w"]
+        self.param_yaml["/**"]["ros__parameters"]["angular_velocity_offset_y"] = self.imu_cail_yaml["Gyr"]["y-axis"]["gyr_w"]
+        self.param_yaml["/**"]["ros__parameters"]["angular_velocity_offset_z"] = self.imu_cail_yaml["Gyr"]["z-axis"]["gyr_w"]
 
     
     def write_yaml_file(self):
