@@ -16,7 +16,7 @@ function log_error() {
 
 parent_frame=''
 child_frame='[]'
-output_yaml_file='sensors_calibration.yaml'
+output_yaml_file='output/sensors_calibration.yaml'
 
 cat<<EOF
 a: robobus sensor_kit_base_link 到 lidar_fl_base_link lidar_fr_base_link lidar_rl_base_link lidar_rr_base_link
@@ -29,19 +29,19 @@ case "$choice" in
     a)
         parent_frame='sensor_kit_base_link'
         child_frame='[lidar_fl_base_link,lidar_fr_base_link,lidar_rl_base_link,lidar_rr_base_link]'
-        output_yaml_file='sensor_kit_base_link2lidar-4.yaml'
+        output_yaml_file='output/sensor_kit_base_link2lidar-4.yaml'
     ;;
 
     b)
         parent_frame='sensor_kit_base_link'
         child_frame='[camera_top_link]'
-        output_yaml_file='sensor_kit_base_link2camera_top_link.yaml'
+        output_yaml_file='output/sensor_kit_base_link2camera_top_link.yaml'
     ;;
 
     c)
         parent_frame='sensor_kit_base_link'
         child_frame='[camera_front]'
-        output_yaml_file='sensor_kit_base_link2camera_front.yaml'
+        output_yaml_file='output/sensor_kit_base_link2camera_front.yaml'
     ;;
 
     *)

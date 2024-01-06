@@ -1,7 +1,0 @@
-ros2 run tf2_ros static_transform_publisher -4.93371 0.327382  1.11241 0.113313  3.13892  3.13236 map rs16
-
-ros2 run tf2_ros static_transform_publisher  -6.25872 -0.558922  0.738691     1.08481   -0.354448 -0.00558862 map os_lidar_fl
-ros2 run tf2_ros static_transform_publisher -6.19727  1.35731 0.734416   2.0065 -2.77526 -3.13426 map os_lidar_fr
-
-ros2 run tf2_ros static_transform_publisher  -3.88867 -0.623572  0.735304   1.98085 -0.346875 0.0553813 map os_lidar_rl
-ros2 run tf2_ros static_transform_publisher -3.83674   1.2784 0.755396    1.087 -2.78672  3.12933 map os_lidar_rr
