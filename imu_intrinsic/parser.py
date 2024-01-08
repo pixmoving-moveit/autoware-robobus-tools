@@ -53,7 +53,7 @@ class ParserYaml:
 
     
     def write_yaml_file(self):
-        path = os.path.join(self.script_path, "..", "output", "output_cgi410_imu_param.yaml")
+        path = os.path.join(self.script_path, "..", "output", "imu_corrector.param.yaml")
         with open(path, "w") as f:
             yaml.dump(self.param_yaml, f)
 
