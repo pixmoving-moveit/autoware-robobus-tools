@@ -25,7 +25,7 @@ class ParserYaml:
 
 
     def read_camera_intrinsic_file(self):
-        path = os.path.join(self.script_path, "output", "output_cgi410_imu_param.yaml")
+        path = os.path.join(self.script_path, "..", "output", "cgi_cgi410_imu_param.yaml")
         try:
             with open(path, "r") as f:
                 self.imu_cail_yaml = yaml.load(f, Loader=yaml.FullLoader)
@@ -43,6 +43,7 @@ class ParserYaml:
 
     def revise_camera_intrinsic(self):
         self.param_yaml={}
+        self.param_yaml["/**"] = {"ros__parameters": {}}
         self.param_yaml["/**"]["ros__parameters"]["angular_velocity_stddev_xx"] = self.imu_cail_yaml["Gyr"]["x-axis"]["gyr_n"]
         self.param_yaml["/**"]["ros__parameters"]["angular_velocity_stddev_yy"] = self.imu_cail_yaml["Gyr"]["y-axis"]["gyr_n"]
         self.param_yaml["/**"]["ros__parameters"]["angular_velocity_stddev_zz"] = self.imu_cail_yaml["Gyr"]["z-axis"]["gyr_n"]
@@ -52,7 +53,7 @@ class ParserYaml:
 
     
     def write_yaml_file(self):
-        path = os.path.join(self.script_path, "output", "output_cgi410_imu_param.yaml")
+        path = os.path.join(self.script_path, "..", "output", "output_cgi410_imu_param.yaml")
         with open(path, "w") as f:
             yaml.dump(self.param_yaml, f)
 

@@ -5,7 +5,7 @@ source $SCRIPT_DIR/../install/setup.bash
 source $SCRIPT_DIR/../../autoware-robobus/setup.bash 
 
 function run_cali(){
-    dir_path="$SCRIPT_DIR/output/output_cgi410_imu_param.yaml"
+    dir_path="$SCRIPT_DIR/output/cgi_cgi410_imu_param.yaml"
     
     if [ ! -e $dir_path ]; then
         log_error "Can't find imu's bag file:[$dir_path]"
