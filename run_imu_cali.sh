@@ -2,7 +2,7 @@
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 source $SCRIPT_DIR/common/log.sh
 source $SCRIPT_DIR/../install/setup.bash 
-source $SCRIPT_DIR/../../autoware-robobus/setup.bash 
+source $SCRIPT_DIR/../../autoware-robobus/install/setup.bash 
 
 function run_cali(){
     dir_path="$SCRIPT_DIR/output/cgi_cgi410_imu_param.yaml"
