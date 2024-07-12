@@ -1,0 +1,70 @@
+# top lidar
+sensor_kit_base_link:
+# camera
+  camera_top_link:
+    x: 0.9408719002776768
+    y: 0.006981757749462233
+    z: 0.3521904394903546
+    roll: -1.5408968856538583
+    pitch: 0.007755510832437561
+    yaw: -1.5482489037473213
+  camera_front_link:
+    x: 0.708
+    y: 1.053
+    z: 1.479
+    roll: -1.553
+    pitch: 0.063
+    yaw: -1.584
+  camera_rear_link:
+    x: 0.708
+    y: 1.053
+    z: 1.479
+    roll: -1.553
+    pitch: 0.063
+    yaw: -1.584
+# lidar -- robobus muti lidar
+  lidar_ancillary:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0 
+
+  lidar_fl_base_link:
+    x: 1.151
+    y: 0.951
+    z: -0.019
+    roll: 0.024
+    pitch: -0.290
+    yaw: -1.928
+  lidar_fr_base_link:
+    x: 1.166
+    y: -0.943
+    z: 0.003
+    roll: -0.001
+    pitch: -0.277
+    yaw: 1.924
+  lidar_rl_base_link:
+    x: -1.171
+    y: 0.942
+    z: -0.017
+    roll: -0.039
+    pitch: -0.297
+    yaw: -1.206
+  lidar_rr_base_link:
+    x: -1.146
+    y: -0.950
+    z: 0.032
+    roll: 0.019
+    pitch: -0.261
+    yaw: 1.208
+
+# combined navigation
+  gnss_link:
+    x: -1.4
+    y: 0.4
+    z: -1.7
+    roll: 0.0
+    pitch: 0.0
+    yaw: 0.0
