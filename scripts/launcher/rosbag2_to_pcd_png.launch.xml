@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <arg name="path" default="/home/pixbus/pix/ros2bag/livox2camera2024/rosbag2_2024_05_20-17_51_01"/>
+  <arg name="lidar_topic" default="/front/livox/points"/>
+  <arg name="image_topics" default="['/gmsl/image_raw']" description="List of Input Topics"/>
+  
+  <!-- point cloud to pcd -->
+  <node pkg="rosbag2_to_pcd" exec="rosbag2_to_pcd_node" name="rosbag2_to_pcd" output="screen">
+    <param name="path_bag" value="$(var path)"/>
+
+    <param name="topic_cloud" value="$(var lidar_topic)"/>
+  </node>
+  
+
+  <!-- image to png -->
+  <let name="input_bag_format" value="cdr"/>
+  <let name="input_bag_storage_id" value="sqlite3"/>
+
+  <node pkg="ros2_bag_to_image" exec="bag_to_image_node" name="bag_to_image_node" output="screen">
+    <param name="input/path" value="$(var path)"/>
+
+    <param name="input/topics" value="$(var image_topics)"/>
+    <param name="output/path" value="$(var path)_pngs"/>
+
+    <param name="input/bag_format" value="$(var input_bag_format)"/>
+    <param name="input/bag_storage_id" value="$(var input_bag_storage_id)"/>
+  </node>
+
+</launch>
