@@ -1,5 +1,12 @@
-*.yaml
-pcd_metadata_param.yaml
+# Visual Studio Code
+.vscode/
+# colcon
+build/
+install/
+log/
+/src/
+
+# Python
+*.pyc
 *-metadata.json
-__pycache__
-output/**
+frames_*

@@ -1,0 +1,72 @@
+repositories:
+  autoware/calibration_tools:
+    type: git
+    url: https://github.com/pixmoving-moveit/CalibrationTools.git
+    version: feature/robobus
+  vendor/lidartag:
+    type: git
+    url: https://github.com/tier4/LiDARTag.git
+    version: humble
+  vendor/lidartag_msgs:
+    type: git
+    url: https://github.com/tier4/LiDARTag_msgs.git
+    version: tier4/universe
+  vendor/apriltag_msgs:
+    type: git
+    url: https://github.com/christianrauch/apriltag_msgs.git
+    version: 2.0.0
+  vendor/apriltag_ros:
+    type: git
+    url: https://github.com/christianrauch/apriltag_ros.git
+    version: e814e9e5d5f1bfb60a4aa685d30977c632bbc540
+  vendor/apriltag_viz:  
+    type: git
+    url: https://github.com/pixmoving-moveit/apriltag_viz.git
+    version: feature/ros2
+  vendor/ros2_numpy:
+    type: git
+    url: https://github.com/Box-Robotics/ros2_numpy.git
+    version: humble
+  vendor/image_pipeline:
+    type: git
+    url: https://github.com/tier4/image_pipeline.git
+    version: 47964112293eb19f9f57254b2e6b68706954cc63
+# pixmoving
+  autoware/robobus_sensor_kit_calibration:
+    type: git
+    url: https://github.com/pixmoving-moveit/robobus_sensor_kit_calibration.git
+    version: main
+  vendor/output_rectified_image:
+    type: git
+    url: https://github.com/pixmoving-moveit/output_rectified_image.git
+    version: main
+
+  # lidar2lidar
+  autoware/pixmoving_calibration_tools/multi_lidar_calibration_ros2:
+    type: git
+    url: https://github.com/pixmoving-moveit/multi_lidar_calibration_ros2.git
+    version: feature/map_matching
+  # imu intrinsic calibration
+  autoware/pixmoving_calibration_tools/imu_utils:
+    type: git
+    url: https://github.com/pixmoving-moveit/imu_utils.git
+    version: feature/ros2
+  # tool
+  autoware/pixmoving_calibration_tools/center_pose_estimator:
+    type: git
+    url: https://github.com/pixmoving-auto/center_pose_estimator.git
+    version: main
+  autoware/pixmoving_calibration_tools/tf_tree_to_yaml:
+    type: git
+    url: https://github.com/pixmoving-auto/tf_tree_to_yaml.git
+    version: main
+
+  # livox2camera
+  vendor/ros2_bag_to_image:
+    type: git
+    url: https://github.com/MapIV/ros2_bag_to_image.git
+    version: master
+  vendor/rosbag2_to_pcd:
+    type: git
+    url: https://github.com/xmfcx/rosbag2_to_pcd.git
+    version: main
