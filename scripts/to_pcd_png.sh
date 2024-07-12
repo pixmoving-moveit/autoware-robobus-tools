@@ -30,7 +30,6 @@ function process()
       lidar_topic:=$lidar_topic \
       image_topics:=$image_topics
 
-
   cd $path"_pcds"
   pcl_concatenate_points_pcd *.pcd
 
