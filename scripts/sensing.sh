@@ -1,7 +1,6 @@
 #!/bin/bash
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-source $SCRIPT_DIR/../install/setup.bash 
-source $SCRIPT_DIR/../../autoware-robobus/install/setup.bash 
+source $HOME/pix/robobus/autoware-robobus/install/setup.bash 
 
 function print_help() {
   echo "启动传感器"
@@ -15,5 +14,6 @@ function print_help() {
 }
 
 robot_state="${1:-true}"
+autoware_robobus_calibration_path=$SCRIPT_DIR/..
 
-ros2 launch robobus_sensor_kit_calibration sensing_all.launch.xml robot_state:=$robot_state 
+ros2 launch $SCRIPT_DIR/launcher/sensor_driver_run.launch.xml robot_state:=$robot_state autoware_robobus_calibration_path:=$autoware_robobus_calibration_path

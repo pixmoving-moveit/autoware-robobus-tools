@@ -64,8 +64,8 @@ repositories:
   # livox2camera
   vendor/ros2_bag_to_image:
     type: git
-    url: https://github.com/MapIV/ros2_bag_to_image.git
-    version: master
+    url: https://github.com/pixmoving-moveit/ros2_bag_to_image.git
+    version: feature/robobus
   vendor/rosbag2_to_pcd:
     type: git
     url: https://github.com/xmfcx/rosbag2_to_pcd.git

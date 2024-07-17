@@ -85,8 +85,6 @@ function rosbag_to_pcds(){
   ros2 launch $SCRIPT_DIR/launcher/rosbag2_to_pcds.launch.xml \
     path:=$rosbag_path \
     lidar_topic:=$topic 
-
-  mkdir $rosbag_path"_pcd_png"
   
   outpcds=$rosbag_path"_pcds"
   check_suffix_files $outpcds '.pcd'
@@ -94,47 +92,67 @@ function rosbag_to_pcds(){
     log_info "合并pcd,输出output.pcd"
     cd $outpcds
     pcl_concatenate_points_pcd *.pcd
-    mv $rosbag_path"_pcds/output.pcd" $rosbag_path"_pcd_png"
+    cd -
   fi
 }
 
+function topic_to_string()
+{
+  local original_string=$1
+  local modified_string=$(echo $original_string | sed 's/\([^\/]\)\//\1_/g; s/^\///')
+  echo $modified_string
+}
 function rosbag_to_pngs(){
-  log_info 
+  
   local rosbag_path=$1
-  local topics=$2
 
   if [ -z "$rosbag_path" ]; then
     log_error "rosbag_to_pngs()函数: rosbag_path变量是空的"
     return
   fi
+  
+  local image_topics="["
+  # 循环遍历数组并打印每个元素
+  for topic in "${image_topics_list[@]}"; do
+    image_topics+="'"$topic"',"
 
-  eval "imag_topics=(${topics//[\[\]\' ]/})"
-  # 遍历image_topics列表并调用check_topic_in_bag函数
-  for topic in "${imag_topics[@]}"; do
     check_topic_in_bag $topic $rosbag_path
     if [ $? -eq 0 ]; then
-      log_info "话题存在: $topics"
+      log_info "话题存在: $topic"
     else
-      log_warning "话题不存在: $topics"
-      return
+      log_warning "话题不存在: $topic"
+      return 1
     fi
   done
 
-  ros2 launch $SCRIPT_DIR/launcher/rosbag2_to_pngs.launch.xml \
-    path:=$rosbag_path \
-    image_topics:=$topics 
+  image_topics="${image_topics%,}"
+  image_topics+="]"
   
-  mkdir $rosbag_path"_pcd_png"
+  log_info $image_topics
+  
+  pngs_out_path="$rosbag_path"_pngs
+
+  ros2 launch $SCRIPT_DIR/launcher/rosbag2_to_pngs.launch.xml \
+    in_path:=$rosbag_path \
+    out_path:=$pngs_out_path \
+    image_topics:=$image_topics 
 
   outpngs=$rosbag_path"_pngs"
-  check_suffix_files $outpngs '.png'
-  if [ $? -eq 0 ]; then
-    log_info "开始输出output.png"
-    cd $outpngs
-    last_file=$(ls -1 | tail -n 1)
-    mv $last_file output.png
-    mv $rosbag_path"_pngs/output.png" $rosbag_path"_pcd_png"
-  fi
+
+  find "$outpngs" -mindepth 1 -maxdepth 1 -type d | while read dir; do
+    cd $dir 
+
+    dir_name=$(basename "$dir")
+    check_suffix_files $dir '.png'
+    if [ $? -eq 0 ]; then
+      log_info "$dir_name".output.png文件重命名
+      last_file=$(ls $dir | tail -n 1)
+      mv $last_file "$dir_name".output.png
+    fi
+
+    cd - 
+  done
+  
 }
 
 function process()
@@ -142,68 +160,75 @@ function process()
   local path=$root/$1
 
   local lidar_topic_1=$2
-  local image_topics_1=$3
-
-  log_info "start work: "$path 
 
   rosbag_to_pcds $path $lidar_topic_1
-  rosbag_to_pngs $path $image_topics_1
+  rosbag_to_pngs $path $image_topics_list
+}
+
+function test(){
+  local -n image_topics_list_1=$1
+  local image_topics="["
+  # 循环遍历数组并打印每个元素
+  for topic in "${image_topics_list_1[@]}"; do
+    image_topics+="'"$topic"',"
+  done
+  image_topics="${image_topics%,}"
+  image_topics+="]"
+  
+  log_info $image_topics
+}
+
+function move_output()
+{ 
+  ros2bag_name=$1
+
+  log_info "--------------------------------------------"
+  log_info "移动output-结果文件 start"
+  
+  mkdir $root/output/$ros2bag_name
+  mkdir $root/output/$ros2bag_name/output
+  mv  $root/*_p* $root/output/$ros2bag_name
+
+  find $root/output/$ros2bag_name -mindepth 1  -type f -name '*output*' | while read file_path; do
+    mv $file_path $root/output/$ros2bag_name/output
+  done
+
+  log_info "移动output-结果文件 end"
+  log_info "--------------------------------------------"
 }
 
 function main()
 {
-  lidar_topic="/sensing/lidar/concatenated/pointcloud_unfilter1111"
-  image_topics="['/sensing/camera/camera6/image_raw']"
+  rm -r $root/output
+  mkdir $root/output
+
+  local lidar_topic="/sensing/lidar/concatenated/pointcloud_unfilter"
+
+  declare -a image_topics_list=(
+    '/sensing/camera/camera1/image_raw' 
+    '/sensing/camera/camera2/image_raw'
+    '/sensing/camera/camera3/image_raw'
+    '/sensing/camera/camera4/image_raw'
+    '/sensing/camera/camera5/image_raw'
+    '/sensing/camera/camera6/image_raw'
+    )
   
-  array=($(ls $root | grep rosbag2_))
-  for element in "${array[@]}"
-  do
-    echo  $element
+  find $root -mindepth 1 -maxdepth 1 -type d -regextype egrep -regex '.*/ros2bag.*[0-9]+$' | while read dir_path; do
+    element=$(basename "$dir_path")
+    # 提取pcd和png，并重命名
     log_info "start: $element"
-    process $element $lidar_topic $image_topics
+    process $element $lidar_topic
+
+    # 把结果整理到output下
+    move_output $element
     log_info "--------------------------------------------"
   done
 
-  find $root -type d -regextype egrep -regex '.*/ros2bag.*[0-9]+$' | while read dir_path; do
-    rosbag_name=$(basename "$dir_path")
-    pngs_name="$root/output/$rosbag_name"_pngs
-    pcds_name="$root/output/$rosbag_name"_pcds
-    png_pcd_name="$root/output/$rosbag_name"_pcd_png
-    
-    if [ -d "$pngs_name" ]; then
-      log_info "================================================"
-      mv "$root/$rosbag_name"_pngs/* $pngs_name
-      rm -r "$root/$rosbag_name"_pngs
-    else
-      log_warning "文件夹不存在: $pngs_name"
-      mkdir $root/output
-      mv "$root/$rosbag_name"_pngs/ $root/output
-    fi
-
-    if [ -d "$pcds_name" ]; then
-      log_info "================================================"
-      mv "$root/$rosbag_name"_pcds/* $pcds_name
-      rm -r "$root/$rosbag_name"_pcds 
-    else
-      log_warning "文件夹不存在: $pcds_name"
-      mkdir $root/output
-      mv "$root/$rosbag_name"_pcds/ $root/output
-    fi
-
-    if [ -d "$png_pcd_name" ]; then
-      log_info "================================================"
-      mv "$root/$rosbag_name"_pcd_png/* $png_pcd_name
-      rm -r "$root/$rosbag_name"_pcd_png
-    else
-      log_warning "文件夹不存在: $pcds_name"
-      mkdir $root/output
-      mv "$root/$rosbag_name"_pcd_png/ $root/output
-    fi
-  done
+  
 }
 
 main 
 
-# 使用方法: ./to_pcd_png.sh <root_path>
-# <root_path>: ros2bag文件夹根目录
-# 例如：./scripts/to_pcd_png.sh ~/pix/ros2bag/livox
+#使用方法: ./to_pcd_png.sh root_path
+#root_path: ros2bag文件夹根目录
+#例如：./scripts/to_pcd_png.sh ~/pix/ros2bag/livox
