@@ -19,4 +19,11 @@ timestamp=$(date +"%Y_%m_%d-%H")
 mkdir -p $HOME/pix/ros2bag/lidar2camera/$timestamp
 cd $HOME/pix/ros2bag/lidar2camera/$timestamp
 
-ros2 bag record --max-cache-size 3221225472 --max-bag-size 2147483648 $(cat ${1:-$SCRIPT_DIR/config/lidar2camera.txt})
+ros2 bag record \
+  --max-cache-size 3221225472 \
+  $(cat ${1:-$SCRIPT_DIR/config/lidar2camera_all.txt})
+
+# ros2 bag record \
+#   --max-cache-size 3221225472 \
+#   --max-bag-size 2147483648 \
+#   $(cat ${1:-$SCRIPT_DIR/config/lidar2camera_all.txt})
