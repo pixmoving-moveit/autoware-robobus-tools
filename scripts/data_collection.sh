@@ -21,7 +21,7 @@ cd $HOME/pix/ros2bag/lidar2camera/$timestamp
 
 ros2 bag record \
   --max-cache-size 3221225472 \
-  $(cat ${1:-$SCRIPT_DIR/config/lidar2camera_all.txt})
+  $(cat ${1:-$SCRIPT_DIR/config/lidar2camera.txt})
 
 # ros2 bag record \
 #   --max-cache-size 3221225472 \
