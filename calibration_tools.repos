@@ -1,8 +1,4 @@
 repositories:
-  autoware/calibration_tools:
-    type: git
-    url: https://github.com/pixmoving-moveit/CalibrationTools.git
-    version: feature/robobus
   vendor/lidartag:
     type: git
     url: https://github.com/tier4/LiDARTag.git
