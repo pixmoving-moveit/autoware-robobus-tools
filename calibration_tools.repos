@@ -47,6 +47,10 @@ repositories:
     type: git
     url: https://github.com/pixmoving-moveit/imu_utils.git
     version: feature/ros2
+  autoware/pixmoving_calibration_tools/manual_lidar_camera_calibration:
+    type: git
+    url: https://github.com/pixmoving-auto/manual_lidar_camera_calibration.git
+    version: main
   # tool
   autoware/pixmoving_calibration_tools/center_pose_estimator:
     type: git
