@@ -11,4 +11,10 @@
     <param name="pcd_metadata_path" value="$(var pcd_metadata_path)"/>
     <param from="$(var pointcloud_map_loader_param_path)"/>
   </node>
+
+  <arg name="autoware_robobus_calibration_path" default="/home/nvidia/pix/robobus/autoware-robobus-calibration"/>
+  <arg name="rviz" default="true" description="launch rviz"/>
+  <arg name="rviz_config" default="$(var autoware_robobus_calibration_path)/scripts/rviz/map_calirabtion.rviz" description="rviz config"/>
+  <node pkg="rviz2" exec="rviz2" name="lidar_rviz2" output="screen" args="-d $(var rviz_config)" if="$(var rviz)" />
+
 </launch>
