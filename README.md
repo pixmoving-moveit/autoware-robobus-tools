@@ -5,6 +5,7 @@ git clone -b feature/livox https://github.com/pixmoving-moveit/robobus_sensor_ki
 cd autoware-robobus-calibration
 mkdir src
 vcs import src < calibration_tools.repos --recursive
+source ../autoware-robobus/install/setup.bash 
 rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```

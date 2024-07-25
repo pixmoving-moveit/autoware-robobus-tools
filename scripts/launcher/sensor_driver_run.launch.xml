@@ -38,8 +38,7 @@
 
         <group>
 			<push-ros-namespace namespace="camera"/>
-            <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera_gmsl_front.launch.py" />
-            <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera_gmsl_top.launch.py" />
+            <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera_gmsl_top.launch.py" />
 		</group>
 
         <group>
@@ -53,7 +52,7 @@
     <arg name="rviz_config_camera" default="$(var autoware_robobus_calibration_path)/scripts/rviz/camera.rviz" description="rviz config"/>
     <group>
         <node pkg="rviz2" exec="rviz2" name="lidar_rviz2" output="screen" args="-d $(var rviz_config_lidar)" if="$(var rviz)" />
-        <node pkg="rviz2" exec="rviz2" name="camera_rviz2" output="screen" args="-d $(var rviz_config_camera)" if="$(var rviz)" />
+        <!-- <node pkg="rviz2" exec="rviz2" name="camera_rviz2" output="screen" args="-d $(var rviz_config_camera)" if="$(var rviz)" /> -->
     </group>
 
 </launch>
