@@ -76,7 +76,7 @@ def generate_launch_description():
         "autofocus": False,
         "focus": -1,
         # resize
-        "image_resize": 2,
+        "image_resize": 1,
         "camera_lifetime": 33,
     }
     parameters["video_device"] = os.path.realpath(parameters["video_device"])

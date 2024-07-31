@@ -50,7 +50,7 @@ repositories:
   autoware/pixmoving_calibration_tools/manual_lidar_camera_calibration:
     type: git
     url: https://github.com/pixmoving-auto/manual_lidar_camera_calibration.git
-    version: main
+    version: feature/online_calib
   # tool
   autoware/pixmoving_calibration_tools/center_pose_estimator:
     type: git
