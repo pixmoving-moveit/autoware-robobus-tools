@@ -16,40 +16,15 @@ function log_error() {
 
 parent_frame=''
 child_frame='[]'
-output_yaml_file='output/sensors_calibration.yaml'
 
 cat<<EOF
 a: robobus sensor_kit_base_link 到 lidar_fl_base_link lidar_fr_base_link lidar_rl_base_link lidar_rr_base_link
-b: robobus sensor_kit_base_link 到 camera_top_link
-c: robobus sensor_kit_base_link 到 camera_front
 EOF
 
-read -p "请输入标定序号(a-c): " choice
-case "$choice" in
-    a)
-        parent_frame='sensor_kit_base_link'
-        child_frame='[lidar_fl_base_link,lidar_fr_base_link,lidar_rl_base_link,lidar_rr_base_link]'
-        output_yaml_file='output/sensor_kit_base_link2lidar-4.yaml'
-    ;;
 
-    b)
-        parent_frame='sensor_kit_base_link'
-        child_frame='[camera_top_link]'
-        output_yaml_file='output/sensor_kit_base_link2camera_top_link.yaml'
-    ;;
-
-    c)
-        parent_frame='sensor_kit_base_link'
-        child_frame='[camera_front]'
-        output_yaml_file='output/sensor_kit_base_link2camera_front.yaml'
-    ;;
-
-    *)
-    log_warning "请输入a-c的序号."
-    exit 1
-    ;;
-esac
-
+parent_frame='sensor_kit_base_link'
+child_frame='[lidar_fl_base_link,lidar_fr_base_link,lidar_rl_base_link,lidar_rr_base_link]'
+output_yaml_file='sensor_kit_base_link2lidar-4.yaml'
 
 ros2 launch tf_tree_to_yaml tf_tree_to_yaml.launch.py \
     parent_frame:=$parent_frame \
