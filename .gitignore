@@ -10,3 +10,5 @@ log/
 *.pyc
 *-metadata.json
 frames_*
+*.pdf
+*.gv
