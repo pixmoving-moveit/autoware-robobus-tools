@@ -12,3 +12,4 @@ log/
 frames_*
 *.pdf
 *.gv
+sensor_kit_base_link2lidar-4.yaml
