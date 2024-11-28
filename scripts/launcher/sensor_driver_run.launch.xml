@@ -24,7 +24,7 @@
 
   <group>
     <push-ros-namespace namespace="/sensing/camera"/>
-    <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera0.launch.py" />
+    <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera0.launch.py" />  
     <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera1.launch.py" />
     <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera2.launch.py" />
     <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera3.launch.py" />
@@ -32,8 +32,7 @@
     <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera4.launch.py" />
     <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera5.launch.py" />
     <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera6.launch.py" /> 
-    
-    <!-- <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera7.launch.py" /> -->
+    <include file="$(find-pkg-share robobus_sensor_kit_launch)/launch/camera/camera7.launch.py" />
   </group>
 
   <group>
@@ -51,7 +50,7 @@
     </group>
   </group>
 
-  <arg name="rviz" default="true" description="launch rviz"/>
+  <arg name="rviz" default="false" description="launch rviz"/>
   <arg name="rviz_config_lidar" default="$(var autoware_robobus_calibration_path)/scripts/rviz/lidar.rviz" description="rviz config"/>
   <arg name="rviz_config_camera" default="$(var autoware_robobus_calibration_path)/scripts/rviz/camera.rviz" description="rviz config"/>
   
