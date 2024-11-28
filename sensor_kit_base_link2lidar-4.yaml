@@ -1,0 +1,29 @@
+sensor_kit_base_link:
+  lidar_front_base_link:
+    x: 1.832
+    y: 0.033
+    z: -0.959
+    roll: -0.013
+    pitch: -0.061
+    yaw: 0.005
+  lidar_rear_base_link:
+    x: -1.832
+    y: -0.012
+    z: -0.961
+    roll: -0.009
+    pitch: -0.022
+    yaw: -3.132
+  lidar_fl_base_link:
+    x: 1.219
+    y: 0.924
+    z: 0.000
+    roll: 3.129
+    pitch: 0.013
+    yaw: 1.149
+  lidar_fr_base_link:
+    x: 1.187
+    y: -0.878
+    z: 0.000
+    roll: -3.136
+    pitch: -0.013
+    yaw: -1.124
