@@ -13,8 +13,7 @@ function print_help() {
   echo ""
 }
 
-robot_state="${1:-false}"
-rviz="${2:-false}"
+robot_state="${1:-true}"
 autoware_robobus_calibration_path=$SCRIPT_DIR/..
 
-ros2 launch $SCRIPT_DIR/launcher/sensor_driver_run.launch.xml robot_state:=$robot_state autoware_robobus_calibration_path:=$autoware_robobus_calibration_path rviz:=$rviz
+ros2 launch $SCRIPT_DIR/launcher/sensor_driver_run.launch.xml robot_state:=$robot_state autoware_robobus_calibration_path:=$autoware_robobus_calibration_path

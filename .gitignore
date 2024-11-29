@@ -10,3 +10,4 @@ log/
 *.pyc
 *-metadata.json
 frames_*
+./sensor_kit_base_link2lidar-4.yaml
