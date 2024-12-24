@@ -1,2 +1,0 @@
-/sensing/camera/camera5/image_raw
-/sensing/lidar/concatenated/pointcloud_unfilter

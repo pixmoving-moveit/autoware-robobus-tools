@@ -205,12 +205,13 @@ function main()
   local lidar_topic="/sensing/lidar/concatenated/pointcloud_unfilter"
 
   declare -a image_topics_list=(
-    '/sensing/camera/camera1/image_raw' 
-    '/sensing/camera/camera2/image_raw'
-    '/sensing/camera/camera3/image_raw'
-    '/sensing/camera/camera4/image_raw'
-    '/sensing/camera/camera5/image_raw'
-    '/sensing/camera/camera6/image_raw'
+    '/sensing/camera/camera0/camera_image' 
+    '/sensing/camera/camera1/camera_image' 
+    '/sensing/camera/camera2/camera_image'
+    '/sensing/camera/camera3/camera_image'
+    '/sensing/camera/camera4/camera_image'
+    '/sensing/camera/camera5/camera_image'
+    '/sensing/camera/camera6/camera_image'
     )
   
   find $root -mindepth 1 -maxdepth 1 -type d -regextype egrep -regex '.*/ros2bag.*[0-9]+$' | while read dir_path; do

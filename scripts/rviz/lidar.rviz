@@ -42,7 +42,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /sensing/camera/camera6/image_raw
+            Value: /sensing/camera/camera6/
           Value: false
         - Class: rviz_default_plugins/Image
           Enabled: false
@@ -56,7 +56,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /sensing/camera/camera5/image_raw
+            Value: /sensing/camera/camera5/
           Value: false
         - Class: rviz_default_plugins/Image
           Enabled: false
@@ -70,7 +70,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /sensing/camera/camera4/image_raw
+            Value: /sensing/camera/camera4/
           Value: false
         - Class: rviz_default_plugins/Image
           Enabled: false
@@ -84,7 +84,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /sensing/camera/camera3/image_raw
+            Value: /sensing/camera/camera3/
           Value: false
         - Class: rviz_default_plugins/Image
           Enabled: false
@@ -98,7 +98,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /sensing/camera/camera2/image_raw
+            Value: /sensing/camera/camera2/
           Value: false
         - Class: rviz_default_plugins/Image
           Enabled: false
@@ -112,7 +112,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /sensing/camera/camera1/image_raw
+            Value: /sensing/camera/camera1/
           Value: false
         - Class: rviz_default_plugins/Image
           Enabled: true
@@ -126,7 +126,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /sensing/camera/camera0/image_raw
+            Value: /sensing/camera/camera0/
           Value: true
       Enabled: false
       Name: Group
@@ -325,7 +325,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /sensing/camera/camera0/image_raw
+        Value: /sensing/camera/camera0/
       Value: true
       Visibility:
         Group:

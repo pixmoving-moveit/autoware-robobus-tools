@@ -25,7 +25,7 @@ def launch_setup(context, *args, **kwargs):
                     "/sensing/lidar/front_right/livox/points",
                     "/sensing/lidar/rear/livox/points",
                 ],
-                "output_frame": 'lidar_front_base_link',
+                "output_frame": 'sensor_kit_base_link',
             }
         ],
         extra_arguments=[{"use_intra_process_comms": LaunchConfiguration("use_intra_process")}],
