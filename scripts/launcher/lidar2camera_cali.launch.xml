@@ -10,8 +10,8 @@
     <param name="output_camera_frame_id" value="$(var output_camera_frame_id)" />
   </node>
 
-  <arg name="camera_frame_id" default="camera0/camera_link" /> 
-  <arg name="lidar_frame_id" default="lidar_front_base_link" /> 
+  <arg name="camera_frame_id" default="camera0/camera_link/cali" /> 
+  <arg name="lidar_frame_id" default="sensor_kit_base_link" /> 
   <arg name="camera_info_topic" default="/sensing/camera/camera0/camera_info" />
 
   <node pkg="manual_lidar_camera_calibration" name="extrinsic_calibrator_node" exec="extrinsic_calibrator.py" output="screen">
