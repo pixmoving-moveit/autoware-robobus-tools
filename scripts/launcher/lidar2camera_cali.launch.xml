@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="image_topic" default="/sensing/camera/camera0/camera_image" />
-  <arg name="camera_info_topic" default="/sensing/camera/camera0/camera_info" />
-  <arg name="output_camera_frame_id" default="camera" />
 
+  <arg name="lidar_frame_id" default="sensor_kit_base_link" /> 
+  <arg name="camera_name" default="camera0" /> 
+  <arg name="image_topic" default="/sensing/camera/$(var camera_name)/camera_image" />
+  <arg name="camera_info_topic" default="/sensing/camera/$(var camera_name)/camera_info" />
+  <arg name="camera_frame_id" default="$(var camera_name)/camera_link/cali" /> 
+
+  <arg name="output_camera_frame_id" default="camera" />
   <node pkg="manual_lidar_camera_calibration" name="camera_points_publisher_node" exec="camera_points_publisher.py" output="screen">
     <param name="image_topic" value="$(var image_topic)" />
     <param name="camera_info_topic" value="$(var camera_info_topic)" />
     <param name="output_camera_frame_id" value="$(var output_camera_frame_id)" />
   </node>
-
-  <arg name="camera_frame_id" default="camera0/camera_link/cali" /> 
-  <arg name="lidar_frame_id" default="sensor_kit_base_link" /> 
-  <arg name="camera_info_topic" default="/sensing/camera/camera0/camera_info" />
 
   <node pkg="manual_lidar_camera_calibration" name="extrinsic_calibrator_node" exec="extrinsic_calibrator.py" output="screen">
     <param name="camera_frame_id" value="$(var camera_frame_id)" />
