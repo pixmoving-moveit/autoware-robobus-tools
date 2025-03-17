@@ -10,7 +10,7 @@ def generate_launch_description():
     parameters={}
     with open(config_path, 'r') as yaml_file:
         parameters = yaml.safe_load(yaml_file)
-    parameters["frame_id"] = f"{parameters["frame_id"]}/cali"
+    parameters["frame_id"] = f"{parameters['frame_id']}/cali"
     
     node = Node(
             package='ros2_v4l2_jetcam',

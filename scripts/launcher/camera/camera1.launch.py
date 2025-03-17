@@ -5,12 +5,12 @@ from ament_index_python.packages import get_package_share_directory
 import yaml
 def generate_launch_description():
     camera_name="camera1"
-    config_path = f"/home/nvidia/pix/parameter/sensor_kit/robobus_sensor_kit_description/intrinsic_parameters/{camera_name}.yaml"
+    config_path = f"{os.getenv('HOME')}/pix/parameter/sensor_kit/robobus_sensor_kit_description/intrinsic_parameters/{camera_name}.yaml"
     
     parameters={}
     with open(config_path, 'r') as yaml_file:
         parameters = yaml.safe_load(yaml_file)
-    parameters["frame_id"] = f"{parameters["frame_id"]}/cali"
+    parameters["frame_id"] = f"{parameters['frame_id']}/cali"
     
     node = Node(
             package='ros2_v4l2_jetcam',

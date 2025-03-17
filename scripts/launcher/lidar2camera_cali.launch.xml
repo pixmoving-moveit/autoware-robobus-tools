@@ -2,7 +2,7 @@
 <launch>
 
   <arg name="lidar_frame_id" default="sensor_kit_base_link" /> 
-  <arg name="camera_name" default="camera0" /> 
+  <arg name="camera_name" default="$(var camera_name)" /> 
   <arg name="image_topic" default="/sensing/camera/$(var camera_name)/camera_image" />
   <arg name="camera_info_topic" default="/sensing/camera/$(var camera_name)/camera_info" />
   <arg name="camera_frame_id" default="$(var camera_name)/camera_link/cali" /> 

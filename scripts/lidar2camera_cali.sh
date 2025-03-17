@@ -5,7 +5,7 @@ source $SCRIPT_DIR/../install/setup.bash
 camera_name=$1
 # 使用正则表达式检查变量是否符合 "部署cameraX" 格式
 if ! [[ "$camera_name" =~ ^camera[0-9]$ ]]; then
-  echo "$camera_name 不符合格式"
+  echo "$camera_name 不符合格式, 请输入cameraX"
   exit 1
 fi
 
