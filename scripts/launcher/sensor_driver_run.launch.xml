@@ -7,6 +7,7 @@
   <arg name="camera_container_name" default="camera_container"/>
 
   <arg name="robot_state" default="true"/>
+  <arg name="camera_name" default="camera0"/>
   <arg name="use_concat_filter" default="true"/>
   <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
   <arg name="use_pointcloud_container" default="false" description="launch pointcloud container"/>
@@ -24,14 +25,7 @@
 
   <group>
     <push-ros-namespace namespace="/sensing/camera"/>
-    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/camera0.launch.py" />  
-    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/camera1.launch.py" />
-    <!-- <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/camera2.launch.py" /> -->
-    <!-- <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/camera3.launch.py" /> -->
-    <!-- <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/camera4.launch.py" /> -->
-    <!-- <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/camera5.launch.py" /> -->
-    <!-- <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/camera6.launch.py" />  -->
-    <!-- <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/camera7.launch.py" /> -->
+    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/$(var camera_name).launch.py" />  
   </group>
 
   <group>

@@ -6,14 +6,18 @@ function print_help() {
   echo "启动传感器"
   echo ""
   echo "Usage:"
-  echo "  ./sensing.sh [-robot_state] [-rviz]"
+  echo "  ./sensing.sh [robot_state] [camera_name]"
   echo ""
-  echo "    - robot_state : 启动传感器是否发布tf树"
-  echo "    - rviz : 是否打开rviz"
+  echo "    - robot_state : 启动传感器是否发布tf树 true | false"
+  echo "    - camera_name : 启动那个相机"
   echo ""
 }
 
-robot_state="${1:-true}"
+robot_state="${1:-false}"
+camera_name="${2:-camera0}"
 autoware_robobus_calibration_path=$SCRIPT_DIR/..
 
-ros2 launch $SCRIPT_DIR/launcher/sensor_driver_run.launch.xml robot_state:=$robot_state autoware_robobus_calibration_path:=$autoware_robobus_calibration_path
+ros2 launch $SCRIPT_DIR/launcher/sensor_driver_run.launch.xml \
+  autoware_robobus_calibration_path:=$autoware_robobus_calibration_path\
+  robot_state:=$robot_state \
+  camera_name:=$camera_name
