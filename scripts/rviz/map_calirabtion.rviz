@@ -7,6 +7,7 @@ Panels:
         - /map1/Topic1
         - /front1/Topic1
         - /rear1/Topic1
+        - /Axes1/Status1
       Splitter Ratio: 0.379084974527359
     Tree Height: 719
   - Class: rviz_common/Selection
@@ -181,7 +182,7 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 166
+      Max Intensity: 162
       Min Color: 0; 0; 0
       Min Intensity: 0
       Name: front_right
@@ -249,12 +250,12 @@ Visualization Manager:
       Update Interval: 0
       Value: false
     - Class: rviz_default_plugins/Axes
-      Enabled: false
-      Length: 5
+      Enabled: true
+      Length: 3
       Name: Axes
       Radius: 1
       Reference Frame: map
-      Value: false
+      Value: true
     - Class: rviz_default_plugins/Axes
       Enabled: true
       Length: 1
@@ -308,6 +309,24 @@ Visualization Manager:
       Radius: 0.10000000149011612
       Reference Frame: sensor_kit_base_link
       Value: true
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: sensor_kit_base_link
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -353,7 +372,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -1.5149996280670166
+      Angle: -1.4449999332427979
       Class: rviz_default_plugins/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
@@ -363,7 +382,7 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 66.22098541259766
+      Scale: 16.905445098876953
       Target Frame: sensor_kit_base_link
       Value: TopDownOrtho (rviz_default_plugins)
       X: 7.207301139831543
