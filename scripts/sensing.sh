@@ -6,7 +6,7 @@ rm -rf $SCRIPT_DIR/launcher/__pycache__
 rm -rf $SCRIPT_DIR/launcher/camera/__pycache__
 sleep 1
 
-source $HOME/pix/robobus/autoware-robobus/install/setup.bash 
+source $HOME/pix/robobus/$AUTOWARE_ROBOBUS_WORKSPACE/install/setup.bash 
 
 function print_help() {
   echo "启动传感器"

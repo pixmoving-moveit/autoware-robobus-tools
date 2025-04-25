@@ -13,7 +13,7 @@ function log_error() {
   echo -e "\033[31m[ERROR] $*\033[0m[\033[31m\xE2\x9C\x97\033[0m]"
 }
 
-source $HOME/pix/robobus/autoware-robobus/install/setup.bash 
+source $HOME/pix/robobus/$AUTOWARE_ROBOBUS_WORKSPACE/install/setup.bash 
 
 timestamp=$(date +"%Y_%m_%d-%H")
 mkdir -p $HOME/pix/ros2bag/lidar2camera/$timestamp
