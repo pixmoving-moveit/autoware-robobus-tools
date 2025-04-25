@@ -1,5 +1,11 @@
 #!/bin/bash
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+
+# 使用旧的可执行文件，导致rviz黑屏
+rm -rf $SCRIPT_DIR/launcher/__pycache__
+rm -rf $SCRIPT_DIR/launcher/camera/__pycache__
+sleep 1
+
 source $HOME/pix/robobus/autoware-robobus/install/setup.bash 
 
 function print_help() {
