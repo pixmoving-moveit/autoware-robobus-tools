@@ -6,11 +6,11 @@
 ### step-1 部署程序
 ```shell
 cd ~/pix/robobus/
-git clone -b livox https://github.com/pixmoving-moveit/autoware-robobus-tools.git
-cd autoware-robobus-tools 
+git clone -b livox https://github.com/pixmoving-moveit/autoware-robobus-tools.git autoware-robobus-tools.livox
+cd autoware-robobus-tools.livox
 mkdir src
 vcs import src < calibration_tools.repos --recursive
-source ~/pix/robobus/autoware-robobus/install/setup.bash
+source ~/pix/robobus/autoware-robobus.feature.PixRover1.1/install/setup.bash
 rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
