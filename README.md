@@ -12,7 +12,7 @@ mkdir src
 vcs import src < calibration_tools.repos --recursive
 source ~/pix/robobus/autoware-robobus.feature.PixRover1.1/install/setup.bash
 rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
-colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
+colcon build  --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
 
 ### step-2 开始标定
