@@ -7,10 +7,9 @@ def generate_launch_description():
 
     rviz_config=get_package_share_directory('rslidar_sdk')+'/rviz/rviz2.rviz'
 
-    config_file = '' # your config file path
     current_file = os.path.abspath(__file__)
     current_dir = os.path.dirname(current_file)
-    user_config_path = os.path.join(current_dir, "robosence_config.yaml")
+    config_file = os.path.join(current_dir, "robosence_config.yaml")
 
     return LaunchDescription([
       Node(
