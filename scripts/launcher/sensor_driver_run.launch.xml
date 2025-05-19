@@ -25,7 +25,7 @@
 
   <group>
     <push-ros-namespace namespace="/sensing/camera"/>
-    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/$(var camera_name).launch.py" />  
+    <!-- <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/$(var camera_name).launch.py" />   -->
   </group>
 
   <group>

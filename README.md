@@ -10,7 +10,7 @@ git clone -b livox https://github.com/pixmoving-moveit/autoware-robobus-tools.gi
 cd autoware-robobus-tools.autoware-robobus-tools
 mkdir src
 vcs import src < calibration_tools.repos --recursive
-source ~/pix/robobus/autoware-robobus.feature.PixRover1.1/install/setup.bash
+source ~/pix/robobus/autoware-robobus.dev-PixRover1.2_1.5-v1.0/install/setup.bash 
 rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
 colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
 ```
