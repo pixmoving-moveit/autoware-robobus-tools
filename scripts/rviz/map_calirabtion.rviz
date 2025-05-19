@@ -42,7 +42,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 5653
@@ -63,7 +63,7 @@ Visualization Manager:
         Value: /map/pointcloud_map
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -76,7 +76,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 1
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 255
@@ -97,7 +97,7 @@ Visualization Manager:
         Value: /sensing/lidar/front_top/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -110,7 +110,7 @@ Visualization Manager:
       Color: 220; 138; 221
       Color Transformer: Intensity
       Decay Time: 1
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 252
@@ -131,7 +131,7 @@ Visualization Manager:
         Value: /sensing/lidar/front_left/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -144,7 +144,7 @@ Visualization Manager:
       Color: 249; 240; 107
       Color Transformer: Intensity
       Decay Time: 1
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 158
@@ -165,7 +165,7 @@ Visualization Manager:
         Value: /sensing/lidar/front_right/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -178,7 +178,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 1
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 177
@@ -199,7 +199,7 @@ Visualization Manager:
         Value: /sensing/lidar/rear_top/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -212,7 +212,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: Intensity
       Decay Time: 1
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 255
@@ -233,7 +233,7 @@ Visualization Manager:
         Value: /sensing/lidar/rear_center/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: false
       Autocompute Value Bounds:
@@ -289,46 +289,11 @@ Visualization Manager:
       Radius: 1
       Reference Frame: map
       Value: false
-    - Class: rviz_default_plugins/Axes
-      Enabled: true
-      Length: 1
-      Name: front_left
-      Radius: 0.10000000149011612
-      Reference Frame: lidar_fl_base_link
-      Value: true
-    - Class: rviz_default_plugins/Axes
-      Enabled: true
-      Length: 1
-      Name: front_right
-      Radius: 0.10000000149011612
-      Reference Frame: lidar_fr_base_link
-      Value: true
-    - Class: rviz_default_plugins/Axes
-      Enabled: true
-      Length: 1
-      Name: front_top
-      Radius: 0.10000000149011612
-      Reference Frame: lidar_ft_base_link
-      Value: true
-    - Class: rviz_default_plugins/Axes
-      Enabled: true
-      Length: 1
-      Name: reat_top
-      Radius: 0.10000000149011612
-      Reference Frame: lidar_rt_base_link
-      Value: true
-    - Class: rviz_default_plugins/Axes
-      Enabled: true
-      Length: 1
-      Name: rear_center
-      Radius: 0.10000000149011612
-      Reference Frame: lidar_rear_base_link
-      Value: true
     - Alpha: 0.5
       Cell Size: 1
       Class: rviz_default_plugins/Grid
       Color: 160; 160; 164
-      Enabled: false
+      Enabled: true
       Line Style:
         Line Width: 0.029999999329447746
         Value: Lines
@@ -340,8 +305,8 @@ Visualization Manager:
         Z: 0
       Plane: XY
       Plane Cell Count: 10
-      Reference Frame: map
-      Value: false
+      Reference Frame: sensor_kit_base_link
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -387,7 +352,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 1.6249998807907104
+      Angle: 1.5749999284744263
       Class: rviz_default_plugins/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549

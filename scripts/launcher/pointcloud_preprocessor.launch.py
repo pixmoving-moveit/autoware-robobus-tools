@@ -20,10 +20,11 @@ def launch_setup(context, *args, **kwargs):
         parameters=[
             {
                 "input_topics": [
-                    "/sensing/lidar/front/livox/points",
-                    "/sensing/lidar/front_left/livox/points",
-                    "/sensing/lidar/front_right/livox/points",
-                    "/sensing/lidar/rear/livox/points",
+                    "/sensing/lidar/front_left/points",
+                    "/sensing/lidar/front_right/points",
+                    "/sensing/lidar/front_top/points",
+                    "/sensing/lidar/rear_center/points",
+                    "/sensing/lidar/rear_top/points",
                 ],
                 "output_frame": 'sensor_kit_base_link',
             }
