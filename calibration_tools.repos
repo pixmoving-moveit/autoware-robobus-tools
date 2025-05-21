@@ -75,3 +75,17 @@ repositories:
     type: git
     url: https://github.com/xmfcx/rosbag2_to_pcd.git
     version: main
+
+  # mapping
+  vendor/FAST_LIO:
+    type: git
+    url: https://github.com/hku-mars/FAST_LIO.git
+    version: ROS2
+  vendor/livox_ros_driver2:
+    type: git
+    url: https://github.com/pixmoving-auto/livox_ros_driver2.git
+    version: feature/robobus
+  vendor/Livox-SDK2:
+    type: git
+    url: https://github.com/pixmoving-auto/Livox-SDK2.git
+    version: feature/robobus
