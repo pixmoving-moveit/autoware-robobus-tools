@@ -41,7 +41,7 @@ Visualization Manager:
       Color: 255; 255; 255
       Color Transformer: FlatColor
       Decay Time: 0
-      Enabled: true
+      Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 5653
@@ -62,7 +62,7 @@ Visualization Manager:
         Value: /map/pointcloud_map
       Use Fixed Frame: true
       Use rainbow: true
-      Value: true
+      Value: false
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -74,8 +74,8 @@ Visualization Manager:
       Class: rviz_default_plugins/PointCloud2
       Color: 255; 255; 255
       Color Transformer: Intensity
-      Decay Time: 1
-      Enabled: false
+      Decay Time: 0
+      Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
       Max Intensity: 255
@@ -96,7 +96,7 @@ Visualization Manager:
         Value: /sensing/lidar/front_top/points
       Use Fixed Frame: true
       Use rainbow: true
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -108,13 +108,13 @@ Visualization Manager:
       Class: rviz_default_plugins/PointCloud2
       Color: 46; 194; 126
       Color Transformer: Intensity
-      Decay Time: 1
+      Decay Time: 0
       Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 183
+      Max Intensity: 162
       Min Color: 0; 0; 0
-      Min Intensity: 1
+      Min Intensity: 2
       Name: front_left
       Position Transformer: XYZ
       Selectable: true
@@ -142,11 +142,11 @@ Visualization Manager:
       Class: rviz_default_plugins/PointCloud2
       Color: 255; 255; 255
       Color Transformer: Intensity
-      Decay Time: 1
+      Decay Time: 0
       Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 180
+      Max Intensity: 182
       Min Color: 0; 0; 0
       Min Intensity: 1
       Name: front_right
@@ -176,7 +176,7 @@ Visualization Manager:
       Class: rviz_default_plugins/PointCloud2
       Color: 220; 138; 221
       Color Transformer: Intensity
-      Decay Time: 1
+      Decay Time: 0
       Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
@@ -210,7 +210,7 @@ Visualization Manager:
       Class: rviz_default_plugins/PointCloud2
       Color: 255; 255; 255
       Color Transformer: Intensity
-      Decay Time: 1
+      Decay Time: 0
       Enabled: false
       Invert Rainbow: false
       Max Color: 255; 255; 255
@@ -351,21 +351,26 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: 0.24499964714050293
-      Class: rviz_default_plugins/TopDownOrtho
+      Class: rviz_default_plugins/XYOrbit
+      Distance: 37.69003677368164
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
+      Focal Point:
+        X: -67.41062927246094
+        Y: -27.08097267150879
+        Z: -7.34103232389316e-05
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 13.862668991088867
+      Pitch: 0.5397962331771851
       Target Frame: sensor_kit_base_link
-      Value: TopDownOrtho (rviz_default_plugins)
-      X: -59.64170455932617
-      Y: 4.406968593597412
+      Value: XYOrbit (rviz_default_plugins)
+      Yaw: 1.7005712985992432
     Saved: ~
 Window Geometry:
   Displays:
