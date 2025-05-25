@@ -1,0 +1,5 @@
+/sensing/lidar/front_left/points
+/sensing/lidar/front_right/points
+/sensing/lidar/front_top/points
+/sensing/lidar/rear_center/points
+/sensing/lidar/rear_top/points
