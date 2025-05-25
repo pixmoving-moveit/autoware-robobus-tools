@@ -1,5 +1,5 @@
-ros2 run tf2_ros static_transform_publisher -68.1295 -28.7344  1.82816    1.54242 -0.0799551  0.0599047 map lidar_ft_base_link
-ros2 run tf2_ros static_transform_publisher -69.0295 -28.4075  1.45168   2.73102 -0.112486   3.04219 map lidar_fl_base_link
-ros2 run tf2_ros static_transform_publisher -67.2759  -28.403   1.3218   0.430356 0.00346671   -3.00783 map lidar_fr_base_link
-ros2 run tf2_ros static_transform_publisher -68.1745 -30.4613  1.65635   1.586 3.02939  3.0983 map lidar_rt_base_link
-ros2 run tf2_ros static_transform_publisher  -68.2624  -31.3461 0.0982858    1.57212    3.06617 -0.0567624 map lidar_rear_base_link
+ros2 run tf2_ros static_transform_publisher   0.55317 -0.624409   1.05356  3.12517 -3.13094 -3.11101 map lidar_ft_base_link
+ros2 run tf2_ros static_transform_publisher 0.860038 0.281961  0.55195    1.15085 -0.0806445    3.11333 map lidar_fl_base_link
+ros2 run tf2_ros static_transform_publisher  0.88573 -1.44634  0.49328   2.03566  -3.12568 0.0477288 map lidar_fr_base_link
+ros2 run tf2_ros static_transform_publisher  -1.15714 -0.537218  0.880451 0.0146155   3.09773    3.1324 map lidar_rt_base_link
+ros2 run tf2_ros static_transform_publisher  -2.14339 -0.518348 -0.606509    3.14098 0.00757439    3.11735 map lidar_rear_base_link
