@@ -18,7 +18,7 @@ function print_help() {
   echo ""
 }
 
-camera_name="${2:-camera0}"
+camera_name="${1:-camera0}"
 autoware_robobus_calibration_path=$SCRIPT_DIR/..
 
 ros2 launch $SCRIPT_DIR/launcher/camera.launch.xml \
