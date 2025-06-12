@@ -4,18 +4,14 @@ from ament_index_python.packages import get_package_share_directory
 import os
 
 def generate_launch_description():
-
-    rviz_config=get_package_share_directory('rslidar_sdk')+'/rviz/rviz2.rviz'
-
-    current_file = os.path.abspath(__file__)
-    current_dir = os.path.dirname(current_file)
-    config_file = os.path.join(current_dir, "robosence_config.yaml")
-
+    config_file = os.path.join(get_package_share_directory('robobus_sensor_kit_launch'), 'config', 'robosence_config.yaml')
+    
     return LaunchDescription([
-      Node(
-          namespace='rslidar_sdk', 
-          package='rslidar_sdk', 
-          executable='rslidar_sdk_node', 
-          output='screen', 
-          parameters=[{'config_path': config_file}]),
+        Node(
+            namespace='rslidar_sdk', 
+            package='rslidar_sdk', 
+            executable='rslidar_sdk_node', 
+            output='screen', 
+            parameters=[{'config_path': config_file}]
+        ),
     ])
