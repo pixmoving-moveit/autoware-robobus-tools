@@ -60,7 +60,7 @@ repositories:
   autoware/pixmoving_calibration_tools/center_pose_estimator:
     type: git
     url: https://github.com/pixmoving-auto/center_pose_estimator.git
-    version: robosence
+    version: robosense
   autoware/pixmoving_calibration_tools/tf_tree_to_yaml:
     type: git
     url: https://github.com/pixmoving-auto/tf_tree_to_yaml.git
