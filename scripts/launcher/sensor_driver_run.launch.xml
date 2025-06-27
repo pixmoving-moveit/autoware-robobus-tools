@@ -37,12 +37,4 @@
     </group>
   </group>
 
-  <arg name="rviz_config_lidar" default="$(var autoware_robobus_calibration_path)/scripts/rviz/lidar.rviz" description="rviz config"/>
-  <arg name="rviz_config_camera" default="$(var autoware_robobus_calibration_path)/scripts/rviz/camera.rviz" description="rviz config"/>
-  
-  <group>
-    <node pkg="rviz2" exec="rviz2" name="lidar_rviz2" output="screen" args="-d $(var rviz_config_lidar)" if="$(var robot_state)"/>
-    <!-- <node pkg="rviz2" exec="rviz2" name="camera_rviz2" output="screen" args="-d $(var rviz_config_camera)" if="$(var robot_state)" /> -->
-  </group>
-  
 </launch>

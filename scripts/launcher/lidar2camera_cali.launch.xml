@@ -19,5 +19,10 @@
     <param name="lidar_frame_id" value="$(var lidar_frame_id)" />
     <param name="camera_info_topic" value="$(var camera_info_topic)" />
   </node>
+
+  <arg name="rviz_config_lidar" default="$(var autoware_robobus_calibration_path)/scripts/rviz/lidar.rviz" description="rviz config"/>
+  <group>
+    <node pkg="rviz2" exec="rviz2" name="lidar_rviz2" output="screen" args="-d $(var rviz_config_lidar)" if="$(var robot_state)"/>
+  </group>
 </launch>
 
