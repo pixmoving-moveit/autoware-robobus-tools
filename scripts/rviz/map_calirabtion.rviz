@@ -4,6 +4,7 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
+        - /map1
         - /front_top1/Topic1
         - /rear_top1/Topic1
       Splitter Ratio: 0.540145993232727
@@ -39,7 +40,7 @@ Visualization Manager:
       Channel Name: intensity
       Class: rviz_default_plugins/PointCloud2
       Color: 255; 255; 255
-      Color Transformer: FlatColor
+      Color Transformer: Intensity
       Decay Time: 0
       Enabled: true
       Invert Rainbow: false
@@ -49,7 +50,7 @@ Visualization Manager:
       Min Intensity: 1
       Name: map
       Position Transformer: XYZ
-      Selectable: true
+      Selectable: false
       Size (Pixels): 3
       Size (m): 0.03999999910593033
       Style: Flat Squares
@@ -361,11 +362,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 11.449533462524414
+      Scale: 10.300069808959961
       Target Frame: map
       Value: TopDownOrtho (rviz_default_plugins)
-      X: -8.821319580078125
-      Y: -0.08733980357646942
+      X: 19.707679748535156
+      Y: 0.13496404886245728
     Saved: ~
 Window Geometry:
   Displays:
