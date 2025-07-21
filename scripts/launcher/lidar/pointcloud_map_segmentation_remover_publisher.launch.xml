@@ -11,6 +11,7 @@
   <arg name="lidar_name" />
   <arg name="input_topic" default="/sensing/lidar/$(var lidar_name)/points"/>
   <arg name="output_topic" default="$(var input_topic)/remover"/>
+  <arg name="initial_pose" default="[]"/>
 
   <node pkg="pointcloud_map_segmentation_remover" exec="pointcloud_map_segmentation_remover_publisher_node" name="pointcloud_map_segmentation_remover_$(var lidar_name)" output="screen">
     <param name="score_threshold" value="$(var score_threshold)"/>
@@ -25,6 +26,7 @@
     <param name="head_engine_path" value="$(var model_path)/pts_backbone_neck_head_$(var model_name).engine"/>
     <param from="$(var model_param_path)"/>
     <param from="$(var class_remapper_param_path)"/>
+    <param name="initial_pose" value="$(var initial_pose)"/>
     <remap from="~/input/pointcloud" to="$(var input_topic)"/>
     <remap from="~/output/pointcloud" to="$(var output_topic)"/>
   </node>

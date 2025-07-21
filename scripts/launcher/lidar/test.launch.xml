@@ -1,32 +1,37 @@
 <?xml version="1.0"?>
 <launch>
-  <group>
-    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+  <!-- <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/scripts/launcher/lidar/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
       <arg name="lidar_name" value="front_left"/>
+      <arg name="initial_pose" value='[1.121, 0.909, -0.488, -3.131, -0.058, 1.190]'/>
     </include>
-  </group>
+  </group> -->
 
-  <group>
-    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+  <!-- <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/scripts/launcher/lidar/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
       <arg name="lidar_name" value="front_right"/>
+      <arg name="initial_pose" value='[1.224, -0.819, -0.465, 3.127, 0.011, -1.054]'/>
     </include>
-  </group>
+  </group> -->
 
-  <group>
-    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+  <!-- <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/scripts/launcher/lidar/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
       <arg name="lidar_name" value="front_top"/>
+      <arg name="initial_pose" value='[0.882, -0.000, -0.015, 0.015, 0.036, 0.053]'/>
     </include>
-  </group>
+  </group> -->
 
-  <group>
-    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+  <!-- <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/scripts/launcher/lidar/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
       <arg name="lidar_name" value="rear_top"/>
+      <arg name="initial_pose" value='[-0.882, -0.000, 0.015, -0.011, 0.020, -3.072]'/>
     </include>
-  </group>
+  </group> -->
 
   <group>
-    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/scripts/launcher/lidar/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
       <arg name="lidar_name" value="rear_center"/>
+      <arg name="initial_pose" value='[-1.917, -0.074, -1.521, 3.110,-0.052,-3.083]'/>
     </include>
   </group>
 
