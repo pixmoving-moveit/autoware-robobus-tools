@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<launch>
+  <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+      <arg name="lidar_name" value="front_left"/>
+    </include>
+  </group>
+
+  <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+      <arg name="lidar_name" value="front_right"/>
+    </include>
+  </group>
+
+  <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+      <arg name="lidar_name" value="front_top"/>
+    </include>
+  </group>
+
+  <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+      <arg name="lidar_name" value="rear_top"/>
+    </include>
+  </group>
+
+  <group>
+    <include file="/home/nvidia/pix/robobus/autoware-robobus-tools.robosense/test/pointcloud_map_segmentation_remover_publisher.launch.xml" > 
+      <arg name="lidar_name" value="rear_center"/>
+    </include>
+  </group>
+
+</launch>

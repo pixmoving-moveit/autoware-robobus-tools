@@ -46,6 +46,10 @@ repositories:
     type: git
     url: https://github.com/pixmoving-moveit/multi_lidar_calibration_ros2.git
     version: feature/map_matching
+  autoware/pixmoving_calibration_tools/pointcloud_map_segmentation_remover:
+    type: git
+    url: https://github.com/pixmoving-auto/pointcloud_map_segmentation_remover.git
+    version: feature/single-frame
   # imu intrinsic calibration
   autoware/pixmoving_calibration_tools/imu_utils:
     type: git
