@@ -66,28 +66,30 @@ class TFExtractor(Node):
             'yaw': float(round(yaw, 16))
         }
         
-        self.update_yaml_file(self.yaml_path, self.child_frame, transform_data)
+        self.update_yaml_file(self.yaml_path, self.parent_frame, self.child_frame, transform_data)
         self.get_logger().info(
-            f"✅ 已更新 {self.child_frame} 的转换信息到 {self.yaml_path}")
+            f"✅ 已更新 {self.parent_frame}-->{self.child_frame} 的转换信息到 {self.yaml_path}")
 
         self.destroy_timer(self.timer)
         self.done = True
 
-    def update_yaml_file(self, yaml_file, target_key, new_data):
+    def update_yaml_file(self, yaml_file, parent_key, child_key, new_data):
         try:
             if not os.path.exists(yaml_file):
                 content = {}
             else:
                 with open(yaml_file, 'r') as f:
                     content = yaml.safe_load(f)
+                if content == None:
+                    content = {}
         except Exception as e:
             self.get_logger().error(f"读取 YAML 文件失败: {e}")
             return
 
-        if 'sensor_kit_base_link' not in content:
-            content['sensor_kit_base_link'] = {}
+        if parent_key not in content:
+            content[parent_key] = {}
 
-        content['sensor_kit_base_link'][target_key] = new_data
+        content[parent_key][child_key] = new_data
 
         try:
             with open(yaml_file, 'w') as f:

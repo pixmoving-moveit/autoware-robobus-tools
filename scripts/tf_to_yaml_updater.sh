@@ -1,7 +1,7 @@
 #!/bin/bash
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 YAML_PATH="$HOME/pix/parameter/sensor_kit/robobus_sensor_kit_description/extrinsic_parameters/sensor_kit_calibration.yaml"
-EXTRINSIC_DIR="$HOME/pix/parameter/sensor_kit/robobus_sensor_kit_description/extrinsic_parameters"
+MAP_YAML_PATH="$HOME/pix/parameter/sensor_kit/robobus_sensor_kit_description/extrinsic_parameters/lidar_from_map.yaml"
 
 # ✅ 自定义菜单目标
 declare -A TARGET_MAP=(
@@ -13,14 +13,10 @@ declare -A TARGET_MAP=(
   [2]="camera2/camera_link"
   [1]="camera1/camera_link"
   [0]="camera0/camera_link"
-  [8]="lidar_fl_base_link"
-  [9]="lidar_rear_base_link"
-  [10]="lidar_rt_base_link"
-  [11]="lidar_fr_base_link"
-  [12]="lidar_ft_base_link"
+  [8]="lidar_all"
 )
 
-MENU_ORDER=(7 6 5 4 3 2 1 0 8 9 10 11 12)
+MENU_ORDER=(7 6 5 4 3 2 1 0 8)
 
 # ✅ 显示菜单
 echo "请选择要更新的TF目标："
@@ -42,19 +38,41 @@ if [[ -z "$child_frame" ]]; then
   exit 1
 fi
 
-# ✅ 执行主 TF 更新（sensor_kit_base_link → child_frame）
-python3 $SCRIPT_DIR/launcher/tf/tf_to_yaml_updater.py \
-  --parent sensor_kit_base_link \
-  --child "$child_frame" \
-  --yaml "$YAML_PATH"
+
 
 # ✅ 如果 child 是 lidar_ 开头，则额外保存 map → child 的 TF 到新 YAML 文件
-if [[ "$child_frame" == lidar_*_base_link ]]; then
-  FILENAME="$EXTRINSIC_DIR/lidar_from_map.yaml"
-  echo "📌 另存 TF: map → $child_frame 到 $FILENAME"
+if [[ "$child_frame" == "lidar_all" ]]; then
+  lidar_list=(
+    lidar_fl_base_link
+    lidar_fr_base_link
+    lidar_ft_base_link
+    lidar_rt_base_link
+    lidar_rear_base_link
+  )
 
+  for lidar_frame in "${lidar_list[@]}"; do
+    echo "🔄 正在更新 $lidar_frame 到 $YAML_PATH"
+
+    # ✅ 写入主 calibration 文件
+    python3 $SCRIPT_DIR/launcher/tf/tf_to_yaml_updater.py \
+      --parent sensor_kit_base_link \
+      --child "$lidar_frame" \
+      --yaml "$YAML_PATH"
+
+    # ✅ 写入 map → lidar 到独立 extrinsic 文件
+    python3 $SCRIPT_DIR/launcher/tf/tf_to_yaml_updater.py \
+      --parent map \
+      --child "$lidar_frame" \
+      --yaml "$MAP_YAML_PATH"
+  done
+
+  echo "✅ 所有 LIDAR 更新完成"
+  exit 0
+
+else
+  # ✅ 执行主 TF 更新（sensor_kit_base_link → child_frame）
   python3 $SCRIPT_DIR/launcher/tf/tf_to_yaml_updater.py \
-    --parent map \
+    --parent sensor_kit_base_link \
     --child "$child_frame" \
-    --yaml "$FILENAME"
+    --yaml "$YAML_PATH"
 fi
