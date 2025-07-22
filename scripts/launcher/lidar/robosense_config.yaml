@@ -18,7 +18,7 @@ lidar:
       user_layer_bytes: 0          #  Bytes of user layer. thers is no user layer if it is 0         
       tail_layer_bytes: 0          #  Bytes of tail layer. thers is no tail layer if it is 0
 
-      min_distance: 10.0           #  Minimum distance of point cloud
+      min_distance: 0.2           #  Minimum distance of point cloud
       max_distance: 200            #  Maximum distance of point cloud
       use_lidar_clock: true        #  true--Use the lidar clock as the message timestamp
                                    #  false-- Use the system clock as the timestamp
@@ -52,7 +52,7 @@ lidar:
                                    
       user_layer_bytes: 0                  
       tail_layer_bytes: 0          
-      min_distance: 15.0           
+      min_distance: 0.2           
       max_distance: 200            
       use_lidar_clock: true        
       dense_points: true           
@@ -80,7 +80,7 @@ lidar:
 
       user_layer_bytes: 0                
       tail_layer_bytes: 0          
-      min_distance: 10.0          
+      min_distance: 0.2        
       max_distance: 40            
       use_lidar_clock: true        
       dense_points: true           
