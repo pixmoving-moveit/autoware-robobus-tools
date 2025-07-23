@@ -45,20 +45,21 @@ repositories:
   autoware/pixmoving_calibration_tools/multi_lidar_calibration_ros2:
     type: git
     url: https://github.com/pixmoving-moveit/multi_lidar_calibration_ros2.git
-    version: feature/map_matching
+    version: feature/map-matching-icp-refine
   autoware/pixmoving_calibration_tools/pointcloud_map_segmentation_remover:
     type: git
     url: https://github.com/pixmoving-auto/pointcloud_map_segmentation_remover.git
     version: feature/single-frame
+  autoware/pixmoving_calibration_tools/manual_lidar_camera_calibration:
+    type: git
+    url: https://github.com/pixmoving-auto/manual_lidar_camera_calibration.git
+    version: main
   # imu intrinsic calibration
   autoware/pixmoving_calibration_tools/imu_utils:
     type: git
     url: https://github.com/pixmoving-moveit/imu_utils.git
     version: feature/ros2
-  autoware/pixmoving_calibration_tools/manual_lidar_camera_calibration:
-    type: git
-    url: https://github.com/pixmoving-auto/manual_lidar_camera_calibration.git
-    version: main
+  
 
   # tool
   autoware/pixmoving_calibration_tools/center_pose_estimator:
@@ -93,3 +94,7 @@ repositories:
     type: git
     url: https://github.com/pixmoving-auto/Livox-SDK2.git
     version: feature/robobus
+
+# source ~/pix/robobus/$AUTOWARE_ROBOBUS_WORKSPACE/install/setup.bash 
+# rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
+# colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
