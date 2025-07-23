@@ -45,7 +45,7 @@ repositories:
   autoware/pixmoving_calibration_tools/multi_lidar_calibration_ros2:
     type: git
     url: https://github.com/pixmoving-moveit/multi_lidar_calibration_ros2.git
-    version: feature/map-matching-icp-refine
+    version: map-matching
   autoware/pixmoving_calibration_tools/pointcloud_map_segmentation_remover:
     type: git
     url: https://github.com/pixmoving-auto/pointcloud_map_segmentation_remover.git
