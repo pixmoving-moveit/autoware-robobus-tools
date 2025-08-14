@@ -1,5 +1,8 @@
 
 # robobus工具集
+> 依赖安装
+sudo apt install libnlopt-dev
+
 > 包含标定工具和建图工具
 
 ## 开始
