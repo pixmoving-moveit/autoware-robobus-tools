@@ -12,7 +12,7 @@ mkdir src
 vcs import src < calibration_tools.repos --recursive
 source ~/pix/robobus/autoware-robobus.master/install/setup.bash 
 rosdep install -y --from-paths src --ignore-src --rosdistro $ROS_DISTRO
-colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release
+colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --packages-skip  livox_sdk2 livox_ros_driver2 fast_lio
 ```
 
 ### step-2 部署程序 -- 建图
