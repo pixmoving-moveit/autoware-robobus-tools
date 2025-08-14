@@ -1,0 +1,54 @@
+<launch>
+
+  <arg name="launch_driver" default="true"/>
+  <arg name="autoware_robobus_calibration_path" default="/home/nvidia/pix/robobus/autoware-robobus-calibration"/>
+  <arg name="use_camera_perception_container" default="true"/>
+  <arg name="use_camera_container" default="false" description="launch camera container"/>
+  <arg name="camera_container_name" default="camera_container"/>
+
+  <arg name="robot_state" default="true"/>
+  <arg name="camera_name" default="camera0"/>
+  <arg name="use_concat_filter" default="true"/>
+  <arg name="vehicle_id" default="$(env VEHICLE_ID default)"/>
+  <arg name="use_pointcloud_container" default="false" description="launch pointcloud container"/>
+  <arg name="pointcloud_container_name" default="pointcloud_container"/>
+
+  <arg name="vehicle_model" default="robobus" description="vehicle model name"/>
+  <arg name="sensor_model" default="robobus_sensor_kit" description="sensor model name"/>
+  <arg name="config_dir" default="$(env HOME)/pix/parameter/sensor_kit/robobus_sensor_kit_description/extrinsic_parameters" description="path to dir where sensors_calibration.yaml, etc. are located"/>
+  <let name="model_file" value="$(find-pkg-share tier4_vehicle_launch)/urdf/vehicle.xacro" />
+
+  <!-- vehicle description -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" exec="robot_state_publisher" if="$(var robot_state)">
+    <param name="robot_description" value="$(command 'xacro $(var model_file) vehicle_model:=$(var vehicle_model) sensor_model:=$(var sensor_model) config_dir:=$(var config_dir)' 'warn')"/>
+  </node>
+
+  <group>
+    <push-ros-namespace namespace="/sensing/camera"/>
+    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/$(var camera_name).launch.py" />  
+  </group>
+
+  <group>
+    <push-ros-namespace namespace="/sensing/lidar"/>
+    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/lidar_livox_muti.launch.py" /> 
+    <group if="$(var robot_state)">
+      <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/pointcloud_preprocessor.launch.py">
+        <arg name="base_frame" value="base_link"/>
+        <arg name="use_intra_process" value="true"/>
+        <arg name="use_multithread" value="true"/>
+        <arg name="use_concat_filter" value="$(var use_concat_filter)"/>
+        <arg name="use_pointcloud_container" value="$(var use_pointcloud_container)"/>
+        <arg name="container_name" value="$(var pointcloud_container_name)"/>
+      </include>
+    </group>
+  </group>
+
+  <arg name="rviz_config_lidar" default="$(var autoware_robobus_calibration_path)/scripts/rviz/lidar.rviz" description="rviz config"/>
+  <arg name="rviz_config_camera" default="$(var autoware_robobus_calibration_path)/scripts/rviz/camera.rviz" description="rviz config"/>
+  
+  <group>
+    <node pkg="rviz2" exec="rviz2" name="lidar_rviz2" output="screen" args="-d $(var rviz_config_lidar)" if="$(var robot_state)"/>
+    <!-- <node pkg="rviz2" exec="rviz2" name="camera_rviz2" output="screen" args="-d $(var rviz_config_camera)" if="$(var robot_state)" /> -->
+  </group>
+  
+</launch>

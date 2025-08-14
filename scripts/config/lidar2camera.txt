@@ -1,8 +1,0 @@
-/sensing/camera/camera0/camera_image
-/sensing/camera/camera1/camera_image
-/sensing/camera/camera2/camera_image
-/sensing/camera/camera3/camera_image
-/sensing/camera/camera4/camera_image
-/sensing/camera/camera5/camera_image
-/sensing/camera/camera6/camera_image
-/sensing/lidar/concatenated/pointcloud_unfilter

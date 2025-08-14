@@ -1,9 +1,0 @@
-<launch>
-  <arg name="launch_driver" default="true"/>
-  <arg name="camera_name" default="camera0"/>
-  <arg name="autoware_robobus_calibration_path" default="/home/nvidia/pix/robobus/autoware-robobus-calibration"/>
-  <group>
-    <push-ros-namespace namespace="/sensing/camera"/>
-    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/$(var camera_name).launch.py" />  
-  </group>
-</launch>
