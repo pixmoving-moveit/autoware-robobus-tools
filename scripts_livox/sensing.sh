@@ -21,7 +21,7 @@ function print_help() {
 
 robot_state="${1:-false}"
 camera_name="${2:-camera0}"
-autoware_robobus_calibration_path=$SCRIPT_DIR/..
+autoware_robobus_calibration_path=$SCRIPT_DIR
 
 ros2 launch $SCRIPT_DIR/launcher/sensor_driver_run.launch.xml \
   autoware_robobus_calibration_path:=$autoware_robobus_calibration_path\

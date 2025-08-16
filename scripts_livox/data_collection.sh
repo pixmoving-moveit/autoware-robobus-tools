@@ -28,4 +28,4 @@ ros2 bag record \
 #   --max-bag-size 2147483648 \
 #   $(cat ${1:-$SCRIPT_DIR/config/lidar2camera.txt})
 
-log_info ./scripts/to_pcd_png.sh $HOME/pix/ros2bag/lidar2camera/$timestamp
+log_info $SCRIPT_DIR/to_pcd_png.sh $HOME/pix/ros2bag/lidar2camera/$timestamp

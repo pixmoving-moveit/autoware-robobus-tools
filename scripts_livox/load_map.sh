@@ -2,7 +2,7 @@
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 source $SCRIPT_DIR/../install/setup.bash 
 source $SCRIPT_DIR/../../autoware-robobus.master/install/setup.bash
-autoware_robobus_calibration_path=$SCRIPT_DIR/..
+autoware_robobus_calibration_path=$SCRIPT_DIR
 
 ros2 launch $SCRIPT_DIR/load_pcd/pointcloud_map_loader.launch.xml \
     pointcloud_map_path:=$SCRIPT_DIR/load_pcd/scans_down.pcd \

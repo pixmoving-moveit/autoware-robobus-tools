@@ -25,14 +25,14 @@
 
   <group>
     <push-ros-namespace namespace="/sensing/camera"/>
-    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/camera/$(var camera_name).launch.py" />  
+    <include file="$(var autoware_robobus_calibration_path)/launcher/camera/$(var camera_name).launch.py" />  
   </group>
 
   <group>
     <push-ros-namespace namespace="/sensing/lidar"/>
-    <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/lidar_livox_muti.launch.py" /> 
+    <include file="$(var autoware_robobus_calibration_path)/launcher/lidar_livox_muti.launch.py" /> 
     <group if="$(var robot_state)">
-      <include file="$(var autoware_robobus_calibration_path)/scripts/launcher/pointcloud_preprocessor.launch.py">
+      <include file="$(var autoware_robobus_calibration_path)/launcher/pointcloud_preprocessor.launch.py">
         <arg name="base_frame" value="base_link"/>
         <arg name="use_intra_process" value="true"/>
         <arg name="use_multithread" value="true"/>
@@ -43,8 +43,8 @@
     </group>
   </group>
 
-  <arg name="rviz_config_lidar" default="$(var autoware_robobus_calibration_path)/scripts/rviz/lidar.rviz" description="rviz config"/>
-  <arg name="rviz_config_camera" default="$(var autoware_robobus_calibration_path)/scripts/rviz/camera.rviz" description="rviz config"/>
+  <arg name="rviz_config_lidar" default="$(var autoware_robobus_calibration_path)/rviz/lidar.rviz" description="rviz config"/>
+  <arg name="rviz_config_camera" default="$(var autoware_robobus_calibration_path)/rviz/camera.rviz" description="rviz config"/>
   
   <group>
     <node pkg="rviz2" exec="rviz2" name="lidar_rviz2" output="screen" args="-d $(var rviz_config_lidar)" if="$(var robot_state)"/>

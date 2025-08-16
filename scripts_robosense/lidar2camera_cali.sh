@@ -9,7 +9,7 @@ if ! [[ "$camera_name" =~ ^camera[0-9]$ ]]; then
   exit 1
 fi
 
-autoware_robobus_calibration_path=$SCRIPT_DIR/..
+autoware_robobus_calibration_path=$SCRIPT_DIR
 
 ros2 launch $SCRIPT_DIR/launcher/lidar2camera_cali.launch.xml \
   camera_name:=$camera_name \
