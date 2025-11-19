@@ -1,0 +1,56 @@
+ros2 run tf2_ros static_transform_publisher  2.12169 -1.09683  1.71922 0.00396763   0.021804 0.00642365 map lidar_ft_base_link
+ros2 run tf2_ros static_transform_publisher  2.39317 -1.98624  1.36147   2.03273   3.13475 -0.010993 map lidar_fr_base_link
+ros2 run tf2_ros static_transform_publisher   2.41714 -0.261178   1.36835     1.12304 -0.00533054    -3.12997 map lidar_fl_base_link
+ros2 run tf2_ros static_transform_publisher 0.364018 -1.07165  1.82745 0.0184262  -3.12903  -3.14092 map lidar_rt_base_link
+ros2 run tf2_ros static_transform_publisher -0.679199  -1.01732  0.373472  0.0196633   -3.05928 1.1039e-05 map lidar_rear_base_link
+
+1
+x: 1.7712770813097722
+[extrinsic_calibrator.py-2] y: -0.038842526031870855
+[extrinsic_calibrator.py-2] z: -1.0835366799518982
+[extrinsic_calibrator.py-2] roll: -1.5850062683272006
+[extrinsic_calibrator.py-2] pitch: 0.008217887780923805
+[extrinsic_calibrator.py-2] yaw: -1.5461871598017616
+
+2
+    x: -1.7975714535187148
+    y: -0.109273020934035
+    z: -1.0116940859612298
+    roll: -1.5481996360491028
+    pitch: -0.0074723883711294
+    yaw: 1.5749381302345158
+    
+3
+x: 1.0653451910364133
+[extrinsic_calibrator.py-2] y: 1.0253316078309096
+[extrinsic_calibrator.py-2] z: -0.44191031640630984
+[extrinsic_calibrator.py-2] roll: -1.9129981268407072
+[extrinsic_calibrator.py-2] pitch: -0.0339816461310416
+[extrinsic_calibrator.py-2] yaw: 0.8654299734762234
+
+4
+x: 1.3273211960016884
+[extrinsic_calibrator.py-2] y: -0.8254246676980422
+[extrinsic_calibrator.py-2] z: -0.39195603179500527
+[extrinsic_calibrator.py-2] roll: -1.8857426118347849
+[extrinsic_calibrator.py-2] pitch: 0.0977858637771103
+[extrinsic_calibrator.py-2] yaw: 2.230997357635011
+
+5
+x: -1.022882363251342
+[extrinsic_calibrator.py-2] y: 0.7538663327808997
+[extrinsic_calibrator.py-2] z: -0.5775645416223567
+[extrinsic_calibrator.py-2] roll: -1.8690476486785945
+[extrinsic_calibrator.py-2] pitch: 0.012967895031553045
+[extrinsic_calibrator.py-2] yaw: -0.8838312665929305
+
+6
+x: -0.879589100475404
+[extrinsic_calibrator.py-2] y: -1.1913524363565329
+[extrinsic_calibrator.py-2] z: -0.48016372681547415
+[extrinsic_calibrator.py-2] roll: -1.9010287865820832
+[extrinsic_calibrator.py-2] pitch: 0.00011084064495792134
+[extrinsic_calibrator.py-2] yaw: -2.2853968354780916
+
+
+
